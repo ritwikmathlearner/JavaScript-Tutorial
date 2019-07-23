@@ -11,7 +11,6 @@ GAME RULES:
 
 var scores, roundScore, activePlayer, gamePlaying;
 init();
-gamePlaying = true;
 var x = document.querySelector("#score-" + activePlayer).textContent;
 document.querySelector(".btn-roll").addEventListener("click", function() {
   if (gamePlaying) {
@@ -36,7 +35,7 @@ document.querySelector(".btn-hold").addEventListener("click", function() {
     scores[activePlayer] += roundScore;
     document.querySelector("#score-" + activePlayer).textContent =
       scores[activePlayer];
-    if (scores[activePlayer] >= 20) {
+    if (scores[activePlayer] >= 50) {
       document.querySelector("#name-" + activePlayer).textContent = "Winner!";
       document.querySelector(".dice").style.display = "none";
       document
@@ -63,6 +62,7 @@ function nextPlayer() {
 
 document.querySelector(".btn-new").addEventListener("click", init);
 function init() {
+  gamePlaying = true;
   scores = [0, 0];
   roundScore = 0;
   activePlayer = 0;
