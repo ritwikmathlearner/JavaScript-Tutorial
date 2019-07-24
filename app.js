@@ -21,10 +21,10 @@ document.querySelector(".btn-roll").addEventListener("click", function() {
     var diceDom = document.querySelector(".dice");
     diceDom.style.display = "block";
     diceDom.src = "dice-" + dice[0] + ".png";
-    if(dice[0] === 6 && dice[1] === 6) {
+    if (dice[0] === 6 && dice[1] === 6) {
       scores[activePlayer] = 0;
       document.querySelector("#score-" + activePlayer).textContent =
-      scores[activePlayer];
+        scores[activePlayer];
       nextPlayer();
     } else if (dice !== 1) {
       roundScore += dice[0];
